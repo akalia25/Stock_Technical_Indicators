@@ -21,6 +21,8 @@ The exit strategy for RSI is that if the stock goes above 80 or below 20, we rev
 ### Results:
 The following figure is the plot created for AAPLs stock history that shows the Normalized Price and RSI over time.
 
+![alt text](https://github.com/akalia25/Stock_Technical_Indicators/blob/master/screenshots/RSI_APPLE.png)
+
 As you can see, the RSI frequently oscillated between values less than 20 and greater than 80. Moreover, the RSI indicator would be a decent representation of how the stock may perform. On the left side of the chart, the price usually went up after the RSI hit a local minimum, and went down shortly after it hit its local peak. This falls apart midway through 2018, when the AAPL stock takes a dive. By the time RSI is at 30, the value of the stock has already plummeted. 
 
 ## Bollinger Bands
@@ -37,6 +39,7 @@ If the closing price crosses below upper band and was above upper band within 5 
 
 The graph below illustrates Bollinger Bands, buy and sell signal.
 
+![alt_text](https://github.com/akalia25/Stock_Technical_Indicators/blob/master/screenshots/BollingerBands.png)
 
 In our python code, we have three functions regarding Bollinger Band.
 
@@ -65,10 +68,13 @@ A graph for each stock is also output as below:
 The band is highlighted in orange. Bold blue line is normalized historical close price.
 
 AAPL:
+![alt text](https://github.com/akalia25/Stock_Technical_Indicators/blob/master/screenshots/bollingerbands_AAPL.png)
 
 DJI:
+![alt_text](https://github.com/akalia25/Stock_Technical_Indicators/blob/master/screenshots/BollingerBands_DJI.png)
 
 Nasdaq:
+![alt_text](https://github.com/akalia25/Stock_Technical_Indicators/blob/master/screenshots/BollingerBands_NASDAQ.png)
 
 ## Price Channel
 ### Analysis:
@@ -106,18 +112,22 @@ Middle Bound
 Sellsignal :  Closing price crosses above lowerband and was below lowerband (0 or 1). 1 is taking action on the sell
 Buysignal: Closing price crosses below upperband and was above upperband(0 or 1). 1 is taking action on the buy
 
+![alt_text](https://github.com/akalia25/Stock_Technical_Indicators/blob/master/screenshots/Price_Channel.png)
+
 
 A graph for each stock is also output as below:
 The band is highlighted in orange. Bold blue line is normalized historical close price.
 AAPL:
-
+![alt_text](https://github.com/akalia25/Stock_Technical_Indicators/blob/master/screenshots/Price_Channel_APPL.png)
 DJI:
-
+![alt_text](https://github.com/akalia25/Stock_Technical_Indicators/blob/master/screenshots/Price_Channel_DJI.png)
 NASDAQ:
+![alt_text](https://github.com/akalia25/Stock_Technical_Indicators/blob/master/screenshots/Price_Channel_NASDAQ.png)
 
 ## Simple Moving Average (SMA)
 ### Analysis:
 The simple moving technique is very commonly used technique in the stock market, due it being easy to implement and providing great insights. The simple moving average only takes two inputs, the time series data (closing price, date) as well as the moving average window. For this assignment moving average windows of 5,10,15 were selected. The moving average window specifies how many data points minus 1, to take into consideration when predicting. A moving average window of 5 would take 4 data points to predict the 5, 10 would take 9 and 15 would take 14. To calculate the MA for “n” data points you take the demand at each value of “n” and take the sum of it. Once you have the sum of the demand, you divide it by “n” to get the the predicted moving average for the “n” th point. To calculate the moving average, the function “data.rolling(window = i).mean()” , where i is the number of steps for the moving average (5,10,15). The reference “data” object is a time series object with stock closing price, and date. The formula shows as following:
+
 MAn=i=1nDin
   
 Where, 
@@ -133,6 +143,8 @@ Once the average of the high, low, and close price is calculated, it is subtract
 
 CCI=(Typical Price - MA of Typical Price) / 0.015 * STD (Typical Price)
 The channel commodity index results in wide range of values, when the CCI results in values that are below -100, this implies that the stock is being oversold. In contrast if the CCI value is greater than 100 then the stock is overbought. We can use these indicators to exit the stock at the correct time, when a stock is being overbought or oversold, the stock generally corrects itself to get out of being oversold or overbought. Therefore, by knowing this, if we have a position of a long in a stock, and it is found to be overbought, then we can conclude the stock will try to balance itself and the price will drop, hence indicating a good time to exit. The same strategy applies when the user is in a short position. If the user is in a short position and the stock is found to be oversold, then we can conclude that the stock will try to balance itself and raise its price, indicating a good time to exit. 
+
+![alt_text](https://github.com/akalia25/Stock_Technical_Indicators/blob/master/screenshots/Commodity_Channel.png)
 
 ### Result:
 From the graphs it can be concluded that a higher moving average window is able to capture consistent growth better, if a stock is stable for a long period of time it is better to use a longer period for moving average. However if the stock is really volatile (i.e AAPLdata) it is better to use a smaller moving average to capture any sudden changes in the stock price, and have a prediction that is more heavily based on recent data, rather than a longer period. 
